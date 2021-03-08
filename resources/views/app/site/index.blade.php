@@ -31,13 +31,3 @@
         </div>
     </section>
 @endsection
-
-@section('js')
-    <script>
-        var isoDate = new Date().toISOString();
-
-        $('#expired_at').attr('min', isoDate.substring(0, isoDate.length - 1))
-
-        console.log(isoDate)
-    </script>
-@endsection
