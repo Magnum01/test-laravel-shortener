@@ -11,7 +11,7 @@ class ShortenLink extends Model
 
     protected $fillable = [
         'original_link',
-        'short_link',
+        'short_code',
         'expired_at',
     ];
 
@@ -38,11 +38,11 @@ class ShortenLink extends Model
         ]);
     }
 
-    public static function createLink(OriginalUrl $originalUrl, ShortUrl $url, ExpiredDate $expiredDate): self
+    public static function createLink(OriginalUrl $originalUrl, ShortUrl $url, ExpireDate $expiredDate): self
     {
         return self::create([
             'original_link' => $originalUrl->getUrl(),
-            'short_link'    => $url->getValue(),
+            'short_code'    => $url->getValue(),
             'expired_at'    => $expiredDate->getValue(),
         ]);
     }

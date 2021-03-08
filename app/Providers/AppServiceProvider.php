@@ -2,25 +2,19 @@
 
 namespace App\Providers;
 
+use App\Http\Services\Link\LinkShortener;
+use App\Http\Services\Link\RandomLinkShortener;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
     public function register()
     {
-        //
+        $this->app->bind(LinkShortener::class, function() {
+            return $this->app->get(RandomLinkShortener::class);
+        });
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
         //

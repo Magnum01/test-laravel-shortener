@@ -4,7 +4,7 @@ namespace App\Entity\Link;
 
 use Carbon\Carbon;
 
-class ExpiredDate
+class ExpireDate
 {
     /**
      * @var Carbon|null
