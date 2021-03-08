@@ -2,6 +2,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('flatpickr')
 } catch (e) {}
 
 window.axios = require('axios');

@@ -17,6 +17,8 @@
     },
     "dependencies": {
         "bootstrap": "^4.6.0",
+        "clipboard": "^2.0.7",
+        "flatpickr": "^4.6.9",
         "jquery": "^3.5.1"
     }
 }

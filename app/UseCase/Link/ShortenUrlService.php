@@ -29,7 +29,7 @@ class ShortenUrlService
     {
         do {
             $shortLink = $this->shortener->process($original);
-        } while($this->links->findByShortCode($shortLink->getValue()) === null);
+        } while($this->links->findByShortCode($shortLink->getValue()) !== null);
 
         return ShortenLink::createLink(
             $original,

@@ -12,7 +12,7 @@ class LinkResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'original_link' => $this->original_link,
+            'original_link' => $this->getOriginalUrl(),
             'short_code' => $this->short_code,
             'expired_at' => $this->expired_at ? $this->expired_at->format('d.m.Y G:i:s') : null,
             'is_expired' => $this->isExpired()

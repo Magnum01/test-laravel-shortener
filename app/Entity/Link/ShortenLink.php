@@ -29,6 +29,26 @@ class ShortenLink extends Model
         return $this->expired_at && $this->expired_at->lt(Carbon::now());
     }
 
+    public function isActive(): bool
+    {
+        return !$this->expired_at || !$this->isExpired();
+    }
+
+    public function getOriginalUrl(): string
+    {
+        return $this->original_link;
+    }
+
+    public function getShortCode(): string
+    {
+        return $this->short_code;
+    }
+
+    public function hasExpirationDate(): bool
+    {
+        return !empty($this->expired_at);
+    }
+
     public function addView(ViewMeta $meta): View
     {
         return $this->views()->create([

@@ -13,7 +13,7 @@ class OriginalUrl
 
     public function __construct(string $url)
     {
-        Assert::true(filter_var($url, FILTER_VALIDATE_URL), 'The link must be valid URL.');
+        Assert::true((bool)filter_var($url, FILTER_VALIDATE_URL), 'The link must be valid URL.');
         $this->url = $url;
     }
 
